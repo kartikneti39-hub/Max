@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="reactorGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="1" />
+      <stop offset="35%" stop-color="#0284c7" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#0369a1" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#021526" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="#040812" />
+
+  <!-- Outer HUD Ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#0e2942" stroke-width="4" stroke-dasharray="16 8" />
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#0284c7" stroke-width="2" stroke-opacity="0.5" />
+
+  <!-- Background Arc Glow -->
+  <circle cx="256" cy="256" r="160" fill="url(#reactorGlow)" />
+
+  <!-- Segmented Arc Reactor Ring -->
+  <g filter="url(#glow)">
+    <!-- 8 Reactor Segments -->
+    <path d="M 256,76 A 180,180 0 0,1 383,129 L 348,164 A 130,130 0 0,0 256,126 Z" fill="url(#ringGrad)" opacity="0.9" />
+    <path d="M 383,129 A 180,180 0 0,1 436,256 L 386,256 A 130,130 0 0,0 348,164 Z" fill="url(#ringGrad)" opacity="0.7" />
+    <path d="M 436,256 A 180,180 0 0,1 383,383 L 348,348 A 130,130 0 0,0 386,256 Z" fill="url(#ringGrad)" opacity="0.9" />
+    <path d="M 383,383 A 180,180 0 0,1 256,436 L 256,386 A 130,130 0 0,0 348,348 Z" fill="url(#ringGrad)" opacity="0.7" />
+    <path d="M 256,436 A 180,180 0 0,1 129,383 L 164,348 A 130,130 0 0,0 256,386 Z" fill="url(#ringGrad)" opacity="0.9" />
+    <path d="M 129,383 A 180,180 0 0,1 76,256 L 126,256 A 130,130 0 0,0 164,348 Z" fill="url(#ringGrad)" opacity="0.7" />
+    <path d="M 76,256 A 180,180 0 0,1 129,129 L 164,164 A 130,130 0 0,0 126,256 Z" fill="url(#ringGrad)" opacity="0.9" />
+    <path d="M 129,129 A 180,180 0 0,1 256,76 L 256,126 A 130,130 0 0,0 164,164 Z" fill="url(#ringGrad)" opacity="0.7" />
+  </g>
+
+  <!-- Inner Core Ring -->
+  <circle cx="256" cy="256" r="90" fill="#041226" stroke="#38bdf8" stroke-width="6" filter="url(#glow)" />
+  <circle cx="256" cy="256" r="60" fill="#0284c7" stroke="#e0f2fe" stroke-width="4" />
+  <circle cx="256" cy="256" r="28" fill="#ffffff" filter="url(#glow)" />
+
+  <!-- Triangles / HUD Accents -->
+  <polygon points="256,180 264,195 248,195" fill="#38bdf8" />
+  <polygon points="256,332 264,317 248,317" fill="#38bdf8" />
+  <polygon points="180,256 195,264 195,248" fill="#38bdf8" />
+  <polygon points="332,256 317,264 317,248" fill="#38bdf8" />
+</svg>

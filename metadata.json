@@ -1,0 +1,12 @@
+{
+  "name": "JARVIS Mobile - AI Phone Assistant",
+  "description": "Your personal AI Jarvis assistant for Android with voice control, phone dialing, messaging, app launcher, schedule reminders, and device settings control.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+
